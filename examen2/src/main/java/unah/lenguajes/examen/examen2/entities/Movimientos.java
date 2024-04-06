@@ -23,14 +23,14 @@ public class Movimientos {
     private int idMovimiento;
 
     @Column(name="tipomovimiento")
-    public char tipoMovimiento;
+    private char tipoMovimiento;
 
-    public double monto; 
+    private double monto; 
 
     @Column(name="fechamovimiento")
-    public LocalDate fechamMovimiento;
+    private LocalDate fechamMovimiento = LocalDate.now();
 
     @ManyToOne
     @JoinColumn(name="numerocuenta", referencedColumnName="numerocuenta")
-    public Cuentas cuenta;
+    private Cuentas cuenta;
 }

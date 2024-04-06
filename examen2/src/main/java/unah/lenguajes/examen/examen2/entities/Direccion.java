@@ -20,13 +20,13 @@ public class Direccion {
     @Column(name="iddireccion")
     private int idDireccion;
 
-    public String estado; 
+    private String estado; 
     
-    public String ciudad;
+    private String ciudad;
     
-    public String calle;
+    private String calle;
     
     @OneToOne
     @JoinColumn(name="dni", referencedColumnName="dni")
-    public Cliente cliente;
+    private Cliente cliente;
 }

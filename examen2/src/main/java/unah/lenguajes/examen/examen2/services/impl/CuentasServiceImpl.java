@@ -1,6 +1,7 @@
 package unah.lenguajes.examen.examen2.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import unah.lenguajes.examen.examen2.entities.Cliente;
 import unah.lenguajes.examen.examen2.entities.Cuentas;
@@ -8,6 +9,7 @@ import unah.lenguajes.examen.examen2.repositories.ClienteRepository;
 import unah.lenguajes.examen.examen2.repositories.CuentasRepository;
 import unah.lenguajes.examen.examen2.services.CuentaService;
 
+@Service
 public class CuentasServiceImpl implements CuentaService {
 
     @Autowired

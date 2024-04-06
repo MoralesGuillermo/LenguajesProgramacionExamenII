@@ -8,8 +8,6 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -24,19 +22,18 @@ public class Cliente {
     @Column(name="dni")
     private String dni;
 
-    public String nombre;
+    private String nombre;
 
-    public String apellido; 
+    private String apellido; 
 
-    public String correo;
+    private String correo;
 
-    public String telefono;
+    private String telefono;
 
     @OneToOne(mappedBy = "cliente")
-    public Direccion direccion;
+    private Direccion direccion;
 
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     @JsonManagedReference
-    public List<Cuentas> cuentas;
-
+    private List<Cuentas> cuentas;
 }

@@ -24,20 +24,24 @@ public class Cuentas {
     @Column(name="numerocuenta")
     private String numeroCuenta;
 
-    public double saldo;
+    private double saldo;
 
     @Column(name="fechaapertura")
-    public LocalDate fechaApertura = LocalDate.now(); 
+    private LocalDate fechaApertura = LocalDate.now(); 
 
-    public boolean estado = true;
+    private boolean estado = true;
 
-    public boolean sobregiro;
+    private boolean sobregiro;
 
     @ManyToOne
     @JoinColumn(name="dni", referencedColumnName="dni")
     @JsonBackReference
-    public Cliente cliente;
+    private Cliente cliente;
 
     @OneToMany(mappedBy = "cuenta", cascade = CascadeType.ALL)
-    public List<Movimientos> movimientos;
+    private List<Movimientos> movimientos;
+
+    public boolean getSobregiro(){
+        return this.sobregiro;
+    }
 }
