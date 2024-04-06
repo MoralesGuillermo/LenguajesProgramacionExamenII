@@ -18,9 +18,9 @@ public class ClienteServiceImpl implements ClienteService {
     @Override
     public Cliente crearCliente(Cliente cliente) {
         if (this.clienteRepository.existsById(cliente.getDni())){
-            return this.clienteRepository.save(cliente);
+            return null;
         }
-        return null;
+        return this.clienteRepository.save(cliente);
     }
 
     @Override

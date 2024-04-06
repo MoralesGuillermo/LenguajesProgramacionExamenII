@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class ClienteController {
     @Autowired
     ClienteServiceImpl clienteServiceImpl;
-
+    
     @PostMapping("/crear")
     public Cliente crearCliente(@RequestBody Cliente cliente) {
         return this.clienteServiceImpl.crearCliente(cliente);
