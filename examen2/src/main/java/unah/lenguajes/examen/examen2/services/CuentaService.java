@@ -8,4 +8,6 @@ public interface CuentaService {
 
     public String asociarCuentaACliente(String clienteDni, String numeroCuenta);
 
+    public Cuentas obtenerMovimientosPorCuenta(String numeroCuenta);
+
 }

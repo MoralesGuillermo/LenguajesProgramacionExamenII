@@ -2,6 +2,8 @@ package unah.lenguajes.examen.examen2.entities;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -32,5 +34,6 @@ public class Movimientos {
 
     @ManyToOne
     @JoinColumn(name="numerocuenta", referencedColumnName="numerocuenta")
+    @JsonBackReference
     private Cuentas cuenta;
 }

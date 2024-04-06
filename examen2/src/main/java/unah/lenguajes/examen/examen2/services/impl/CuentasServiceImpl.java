@@ -46,4 +46,12 @@ public class CuentasServiceImpl implements CuentaService {
         return "El cliente o la cuenta a asociar no existen";
     }
 
+    @Override
+    public Cuentas obtenerMovimientosPorCuenta(String numeroCuenta) {
+        if (this.cuentasRepository.existsById(numeroCuenta)){
+            return this.cuentasRepository.findById(numeroCuenta).get();
+        }
+        return null;
+    }
+
 }

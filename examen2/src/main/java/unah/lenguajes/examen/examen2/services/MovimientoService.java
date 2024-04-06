@@ -9,5 +9,4 @@ public interface MovimientoService {
 
     public Movimientos crearMovimiento(MovimientoDto movimientoDto);
 
-    public List<Movimientos> obtenerMovimientosPorCuenta(String numeroCuenta);
 }

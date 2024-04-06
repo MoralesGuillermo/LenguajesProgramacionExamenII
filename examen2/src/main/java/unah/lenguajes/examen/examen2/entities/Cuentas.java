@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -39,6 +40,7 @@ public class Cuentas {
     private Cliente cliente;
 
     @OneToMany(mappedBy = "cuenta", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Movimientos> movimientos;
 
     public boolean getSobregiro(){

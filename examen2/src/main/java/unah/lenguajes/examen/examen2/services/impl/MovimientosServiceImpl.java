@@ -59,14 +59,4 @@ public class MovimientosServiceImpl implements MovimientoService{
         }
         return null;
     }
-
-
-
-    @Override
-    public List<Movimientos> obtenerMovimientosPorCuenta(String numeroCuenta) {
-        
-    }
-
-    
-
 }
