@@ -18,14 +18,15 @@ public class CuentasServiceImpl implements CuentaService {
     @Autowired
     ClienteRepository clienteRepository;
 
+
     @Override
     public Cuentas crearCuenta(Cuentas cuenta) {
         String numeroCuenta = cuenta.getNumeroCuenta();
         double saldo = cuenta.getSaldo();
-        if (this.cuentasRepository.existsById(numeroCuenta) && saldo > 500){
-            return this.cuentasRepository.save(cuenta);
+        if (this.cuentasRepository.existsById(numeroCuenta) || saldo < 500){
+            return null;
         }
-        return null;
+        return this.cuentasRepository.save(cuenta);
 
 
     }
@@ -43,6 +44,8 @@ public class CuentasServiceImpl implements CuentaService {
             }
             return String.format("La cuenta %s ya se encuentra asociada a un cliente", numeroCuenta);
         }
+        System.out.println(this.cuentasRepository.existsById(numeroCuenta));
+        System.out.println(numeroCuenta);
         return "El cliente o la cuenta a asociar no existen";
     }
 

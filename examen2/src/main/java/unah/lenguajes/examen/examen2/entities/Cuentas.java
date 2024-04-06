@@ -34,7 +34,7 @@ public class Cuentas {
 
     private boolean sobregiro;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="dni", referencedColumnName="dni")
     @JsonBackReference
     private Cliente cliente;
